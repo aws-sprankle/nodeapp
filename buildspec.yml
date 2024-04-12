@@ -10,7 +10,7 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...  
       - docker build -t nodeapp .
-      - docker docker tag nodeapp:latest 008415111735.dkr.ecr.us-east-1.amazonaws.com/nodeapp:latest
+      - docker tag nodeapp:latest 008415111735.dkr.ecr.us-east-1.amazonaws.com/nodeapp:latest
   post_build:
     commands:
       - echo Build completed on `date`
