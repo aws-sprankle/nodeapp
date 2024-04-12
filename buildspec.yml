@@ -16,5 +16,11 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push 008415111735.dkr.ecr.us-east-1.amazonaws.com/nodeapp:latest # Push the image with the timestamp tag
+      - printf '[{"name":"%s","imageUri":"%s"}]' nodeapp $008415111735.dkr.ecr.us-east-1.amazonaws.com/nodeapp:latest > imagedefinitions.json
+      - cat imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json
 
 
